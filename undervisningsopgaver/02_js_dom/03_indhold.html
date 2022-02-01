@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header {
+        text-align: center;
+      }
+      footer {
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+      }
+      section {
+        gap: 20px;
+      }
+      main {
+        margin: 70px;
+      }
+
+      @media (min-width: 650px) {
+        section {
+          grid-row: 2/3;
+          display: flex;
+
+          grid-template-columns: 1fr 1fr;
+        }
+
+        #1 {
+          grid-column: 1/2;
+        }
+        #2 {
+          grid-column: 2/3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article id="1">
+          <img src="splashbillede_done.jpg" alt="filler" />
+          <h3>artikel 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+            consectetur quo deleniti placeat fuga voluptate dolorem, quidem
+            sequi illum maiores? Doloribus quibusdam expedita molestias
+            inventore voluptas illum facilis, beatae ut.
+          </p>
+        </article>
+        <article id="2">
+          <img src="splashbillede_done.jpg" alt="filler" />
+          <h3>artikel 2</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et illum
+            harum laboriosam. Consequatur expedita magnam nisi necessitatibus
+            autem earum odit, laborum impedit animi natus, recusandae officia,
+            iste ex hic repellat?
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <h4>Footer</h4>
+    </footer>
+    <script>
+      const overskrift = document.querySelector("h1");
+      overskrift.textContent;
+      console.log(overskrift.textContent);
+      overskrift.textContent = "Hej";
+      console.log(overskrift.textContent);
+
+      const artikel1 = document.querySelector("article:nth-child(1) h3");
+      console.log(artikel1);
+      artikel1.textContent = "Her er et billede";
+
+      const artikel2 = document.querySelector("article:nth-child(2) h3");
+      console.log(artikel2);
+      artikel2.textContent = "Her er et billede";
+
+      const billede1 = document.querySelector("article:nth-child(1) img");
+      console.log(billede1);
+      billede1.src = "billede.jpg";
+      billede1.alt = "Mønster";
+
+      const billede2 = document.querySelector("article:nth-child(2) img");
+      console.log(billede2);
+      billede2.src = "billede.jpg";
+      billede2.alt = "Mønster";
+    </script>
+  </body>
+</html>
