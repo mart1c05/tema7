@@ -32,7 +32,7 @@
       <h2>Undertitel</h2>
       <section>
         <article>
-          <img src="splashbillede_done.jpg" alt="filler" />
+          <img src="http://placeimg.com/640/480/nature" alt="filler" />
           <h3>artikel 1</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
@@ -42,7 +42,7 @@
           </p>
         </article>
         <article>
-          <img src="splashbillede_done.jpg" alt="filler" />
+          <img src="http://placeimg.com/640/480/nature" alt="filler" />
           <h3>artikel 2</h3>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et illum
@@ -73,27 +73,45 @@
 
       const billede1 = document.querySelector("article:nth-child(1) img");
       console.log(billede1);
-      billede1.src = "billede.jpg";
-      billede1.alt = "Mønster";
+      billede1.src = "http://placeimg.com/640/480/tech";
+      billede1.alt = "billede 1";
 
       const billede2 = document.querySelector("article:nth-child(2) img");
       console.log(billede2);
-      billede2.src = "billede.jpg";
-      billede2.alt = "Mønster";
+      billede2.src = "http://placeimg.com/640/480/tech";
+      billede2.alt = "billede 2";
 
       let mainSection = document.querySelector("section");
       //Nyt article element
-
       let newArticle = document.createElement("article");
+
       //Nyt H# element
-      let undertitel_2 = document.createElement("h3");
+      let undertitel3 = document.createElement("h3");
       //Tekst til overskrift
-      let undertitel_2Text = document.createTextNode("artikel 3");
+      let undertitel3Text = document.createTextNode("artikel 3");
       //Indsæt tekst i overskrift
-      undertitel_2.appendChild(undertitel_2Text);
+      undertitel3.appendChild(undertitel3Text);
       //Tilføj overskrift til article
-      newArticle.appendChild(undertitel_2);
+      newArticle.appendChild(undertitel3);
       //Tilføj article til section
+
+      //Nyt tekst element
+      let tekst3 = document.createElement("p");
+      //Tekst til p
+      let tekst3Text = document.createTextNode("Hejsa");
+      //Indsæt tekst i p
+      tekst3.appendChild(tekst3Text);
+      //Tilføj tekst til article
+      newArticle.appendChild(tekst3);
+      //Tilføj article til section
+
+      //Nyt billede element
+      let billede3 = document.createElement("img");
+      //billede src
+      billede3.src = "http://placeimg.com/640/480/tech";
+      billede3.alt = "billede 3";
+      //tilføj billede til article
+      newArticle.appendChild(billede3);
 
       mainSection.appendChild(newArticle);
     </script>
