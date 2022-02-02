@@ -57,63 +57,75 @@
       <h4>Footer</h4>
     </footer>
     <script>
-      const overskrift = document.querySelector("h1");
-      overskrift.textContent;
-      console.log(overskrift.textContent);
-      overskrift.textContent = "Hej";
-      console.log(overskrift.textContent);
+      document.addEventListener("DOMContentLoaded", start);
+      function start() {
+        const overskrift = document.querySelector("h1");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+        overskrift.textContent = "Hej";
+        console.log(overskrift.textContent);
 
-      const artikel1 = document.querySelector("article:nth-child(1) h3");
-      console.log(artikel1);
-      artikel1.textContent = "Her er et billede";
+        const artikel1 = document.querySelector("article:nth-child(1) h3");
+        console.log(artikel1);
+        artikel1.textContent = "Her er et billede";
 
-      const artikel2 = document.querySelector("article:nth-child(2) h3");
-      console.log(artikel2);
-      artikel2.textContent = "Her er et billede";
+        const artikel2 = document.querySelector("article:nth-child(2) h3");
+        console.log(artikel2);
+        artikel2.textContent = "Her er et billede";
 
-      const billede1 = document.querySelector("article:nth-child(1) img");
-      console.log(billede1);
-      billede1.src = "http://placeimg.com/640/480/tech";
-      billede1.alt = "billede 1";
+        const billede1 = document.querySelector("article:nth-child(1) img");
+        console.log(billede1);
+        billede1.src = "http://placeimg.com/640/480/tech";
+        billede1.alt = "billede 1";
 
-      const billede2 = document.querySelector("article:nth-child(2) img");
-      console.log(billede2);
-      billede2.src = "http://placeimg.com/640/480/tech";
-      billede2.alt = "billede 2";
+        const billede2 = document.querySelector("article:nth-child(2) img");
+        console.log(billede2);
+        billede2.src = "http://placeimg.com/640/480/tech";
+        billede2.alt = "billede 2";
 
-      let mainSection = document.querySelector("section");
-      //Nyt article element
-      let newArticle = document.createElement("article");
+        let mainSection = document.querySelector("section");
+        //Nyt article element
+        let newArticle = document.createElement("article");
 
-      //Nyt H# element
-      let undertitel3 = document.createElement("h3");
-      //Tekst til overskrift
-      let undertitel3Text = document.createTextNode("artikel 3");
-      //Indsæt tekst i overskrift
-      undertitel3.appendChild(undertitel3Text);
-      //Tilføj overskrift til article
-      newArticle.appendChild(undertitel3);
-      //Tilføj article til section
+        //Nyt H# element
+        let undertitel3 = document.createElement("h3");
+        //Tekst til overskrift
+        let undertitel3Text = document.createTextNode("artikel 3");
+        //Indsæt tekst i overskrift
+        undertitel3.appendChild(undertitel3Text);
+        //Tilføj overskrift til article
+        newArticle.appendChild(undertitel3);
+        //Tilføj article til section
 
-      //Nyt tekst element
-      let tekst3 = document.createElement("p");
-      //Tekst til p
-      let tekst3Text = document.createTextNode("Hejsa");
-      //Indsæt tekst i p
-      tekst3.appendChild(tekst3Text);
-      //Tilføj tekst til article
-      newArticle.appendChild(tekst3);
-      //Tilføj article til section
+        //Nyt tekst element
+        let tekst3 = document.createElement("p");
+        //Tekst til p
+        let tekst3Text = document.createTextNode("Hejsa");
+        //Indsæt tekst i p
+        tekst3.appendChild(tekst3Text);
+        //Tilføj tekst til article
+        newArticle.appendChild(tekst3);
+        //Tilføj article til section
 
-      //Nyt billede element
-      let billede3 = document.createElement("img");
-      //billede src
-      billede3.src = "http://placeimg.com/640/480/tech";
-      billede3.alt = "billede 3";
-      //tilføj billede til article
-      newArticle.appendChild(billede3);
+        //Nyt billede element
+        let billede3 = document.createElement("img");
+        //billede src
+        billede3.src = "http://placeimg.com/640/480/tech";
+        billede3.alt = "billede 3";
+        //tilføj billede til article
+        newArticle.appendChild(billede3);
 
-      mainSection.appendChild(newArticle);
+        mainSection.appendChild(newArticle);
+        document.addEventListener("click", billede1Click);
+        function billede1Click() {
+          const billede1skift = document.querySelector(
+            "article:nth-child(1) img"
+          );
+          console.log(billede1skift);
+          billede1skift.src = "http://placeimg.com/640/480/people";
+          billede1skift.alt = "billede 1 skift";
+        }
+      }
     </script>
   </body>
 </html>
