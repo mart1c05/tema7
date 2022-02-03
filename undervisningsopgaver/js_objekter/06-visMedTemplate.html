@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <article id="dyr">
+      <p></p>
+      <img src="" alt="Gris" />
+    </article>
+    <section id="liste">
+      <p></p>
+    </section> -->
+    <section class="data_dyr"></section>
+    <template>
+      <article class="dyrene">
+        <h3></h3>
+        <img src="" alt="" />
+        <p class="typerne"></p>
+        <p class="levesteder"></p>
+      </article>
+    </template>
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+      function start() {
+        // let dyr = {
+        //   dyr: "gris",
+        //   type: "pattedyr",
+        //   billede: "http://mabe-kea.dk/E19/pics/pig.png",
+        //   levested: "svinefarme",
+        // };
+        // console.log(
+        //   `dyr:${dyr.dyr}, type:${dyr.type}, levested:${dyr.levested}`
+        // );
+
+        // const destination = document.querySelector("#dyr");
+        // const dyret = `Dyr:${dyr.dyr}, Type:${dyr.type}, Levested:${dyr.levested}`;
+        // destination.querySelector("p").textContent = dyret;
+        // destination.querySelector("img").src = dyr.billede;
+
+        let array = [
+          {
+            dyr: "gris",
+            type: "pattedyr",
+            billede: "http://mabe-kea.dk/E19/pics/pig.png",
+            levested: "svinefarm",
+          },
+          {
+            dyr: "frø",
+            type: "amfibie",
+            billede: "http://mabe-kea.dk/E19/pics/frog.png",
+            levested: "sø",
+          },
+          {
+            dyr: "ræv",
+            type: "pattedyr",
+            billede: "http://mabe-kea.dk/E19/pics/fox.png",
+            levested: "skov",
+          },
+          {
+            dyr: "sild",
+            type: "fisk",
+            billede: "http://mabe-kea.dk/E19/pics/sild.jpg",
+            levested: "hav",
+          },
+          {
+            dyr: "krokodille",
+            type: "krybdyr",
+            billede: "http://mabe-kea.dk/E19/pics/kroko.jpg",
+            levested: "sump",
+          },
+        ];
+        // console.log(array);
+        // const listevisning = document.querySelector("#liste");
+        // array.forEach((array) => {
+        //   listevisning.innerHTML += `<p>${array.dyr} ${array.type} ${array.levested}</p>`;
+        // });
+        const data = document.querySelector(".data_dyr");
+        const dyreneTemplate = document.querySelector("template");
+        array.forEach((array) => {
+          let klon = dyreneTemplate.cloneNode(true).content;
+          klon.querySelector("h3").textContent = array.dyr;
+          klon.querySelector("img").src = array.billede;
+          klon.querySelector(".typerne").textContent = array.type;
+          klon.querySelector(".levesteder").textContent = array.levested;
+          data.appendChild(klon);
+        });
+      }
+    </script>
+  </body>
+</html>

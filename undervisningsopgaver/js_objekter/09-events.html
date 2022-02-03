@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      img {
+        width: 100%;
+      }
+      body {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+
+      article {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="data_film"></section>
+    <template>
+      <article class="filmene">
+        <img src="" alt="" />
+        <h3></h3>
+        <p class="lande"></p>
+        <p class="instruktoerer"></p>
+      </article>
+    </template>
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+      function start() {
+        let array = [
+          {
+            titel: "A Calling",
+            land: "Danmark",
+            instruktoer: "Christian Bengtson",
+            billede:
+              "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84.jpg",
+          },
+          {
+            titel: "A Hole In My Heart",
+            land: "Holland",
+            instruktoer: "Mees Peijnenburg",
+            billede:
+              "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r.jpg",
+          },
+          {
+            titel: "A Place In The Sun - 110 years after the genocide",
+            land: "Tyskland",
+            instruktoer: "Christian Zipfel",
+            billede:
+              "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck.jpg",
+          },
+          {
+            titel: "A Tower of Two",
+            land: "Danmark",
+            instruktoer: "Jacob Krzysztof Glogowski",
+            billede:
+              "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd.jpg",
+          },
+          {
+            titel: "A Woman Without Children",
+            land: "Danmark",
+            instruktoer: "Cecilie Kronborg Thomsen",
+            billede:
+              "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/HRZBn8KLPmvVNvoJ4e8CzUVU.jpg",
+          },
+        ];
+        const data = document.querySelector(".data_film");
+        const filmTemplate = document.querySelector("template");
+        array.forEach((array) => {
+          let klon = filmTemplate.cloneNode(true).content;
+          klon.querySelector("h3").textContent = array.titel;
+          klon.querySelector("img").src = array.billede;
+          klon.querySelector(".lande").textContent = array.land;
+          klon.querySelector(".instruktoerer").textContent = array.instruktoer;
+          data.appendChild(klon);
+        });
+      }
+    </script>
+  </body>
+</html>
