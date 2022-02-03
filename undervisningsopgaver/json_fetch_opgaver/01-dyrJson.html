@@ -30,15 +30,15 @@
         }
         hentdata(fil);
 
-        function vis(array) {
+        function vis(alleDyr) {
           const data = document.querySelector(".data_dyr");
           const dyreneTemplate = document.querySelector("template");
-          array.forEach((array) => {
+          alleDyr.forEach((alleDyr) => {
             let klon = dyreneTemplate.cloneNode(true).content;
-            klon.querySelector("h3").textContent = array.dyr;
-            klon.querySelector("img").src = array.billede;
-            klon.querySelector(".typerne").textContent = array.type;
-            klon.querySelector(".levesteder").textContent = array.levested;
+            klon.querySelector("h3").textContent = alleDyr.dyr;
+            klon.querySelector("img").src = alleDyr.billede;
+            klon.querySelector(".typerne").textContent = alleDyr.type;
+            klon.querySelector(".levesteder").textContent = alleDyr.levested;
             data.appendChild(klon);
           });
         }

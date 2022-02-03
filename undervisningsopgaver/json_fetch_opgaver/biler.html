@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="data_biler"></section>
+    <template>
+      <article class="bilerne">
+        <h3></h3>
+        <p class="modeller"></p>
+        <p class="motorer"></p>
+        <p class="kilometer"></p>
+        <p class="udstyrer"></p>
+      </article>
+    </template>
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+      function start() {
+        const fil = "biler.json";
+        async function hentdata(fil) {
+          const resultat = await fetch(fil);
+          const json = await resultat.json();
+          vis(json);
+        }
+        function vis(json) {
+          console.log(json);
+        }
+        hentdata(fil);
+
+        function vis(biler) {
+          const data = document.querySelector(".data_biler");
+          const bilerTemplate = document.querySelector("template");
+          biler.forEach((biler) => {
+            let klon = bilerTemplate.cloneNode(true).content;
+            klon.querySelector("h3").textContent = biler.mærke;
+            klon.querySelector(".modeller").textContent = biler.model;
+            klon.querySelector(".motorer").textContent = biler.motor;
+            klon.querySelector(".kilometer").textContent = biler.km;
+            klon.querySelector(".udstyrer").textContent = biler.udstyr;
+            data.appendChild(klon);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
