@@ -5,6 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      img {
+        width: 100%;
+      }
+      .data_person {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+
+      article {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <section class="data_person"></section>
@@ -36,6 +52,7 @@
           json.forEach((person) => {
             const klon = personTemplate.cloneNode(true).content;
             klon.querySelector("h2").textContent = person.fornavn;
+            klon.querySelector("img").src = "faces/" + person.billede;
             klon.querySelector(".email").textContent = person.email;
             klon.querySelector(".titel").textContent = person.titel;
             data.appendChild(klon);
