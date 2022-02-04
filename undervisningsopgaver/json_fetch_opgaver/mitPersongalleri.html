@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="data_person"></section>
+    <template>
+      <article class="personer">
+        <h2></h2>
+        <img src="" alt="" />
+
+        <p class="efternavn"></p>
+        <p class="email"></p>
+      </article>
+    </template>
+    <script>
+      const url = "https://mitpersongalleri-a0f2.restdb.io/rest/personliste";
+      const options = {
+        headers: { "x-apikey": "61fcfb6d3f215f310a37be92" },
+      };
+      document.addEventListener("DOMContentLoaded", start);
+      function start() {
+        hentdata();
+      }
+      async function hentdata() {
+        const resultat = await fetch(url, options);
+        const json = await resultat.json();
+        vis(json);
+      }
+
+      function vis(json) {
+        const data = document.querySelector(".data_person");
+        const personTemplate = document.querySelector("template");
+        json.forEach((person) => {
+          const klon = personTemplate.cloneNode(true).content;
+          klon.querySelector("h2").textContent = person.Fornavn;
+          klon.querySelector(".email").textContent = person.email;
+          klon.querySelector(".efternavn").textContent = person.Efternavn;
+          data.appendChild(klon);
+        });
+      }
+    </script>
+  </body>
+</html>
