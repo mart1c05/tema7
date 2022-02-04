@@ -12,7 +12,6 @@
       <article class="personer">
         <h2></h2>
         <img src="" alt="" />
-
         <p class="efternavn"></p>
         <p class="email"></p>
       </article>
@@ -38,7 +37,7 @@
         json.forEach((person) => {
           const klon = personTemplate.cloneNode(true).content;
           klon.querySelector("h2").textContent = person.Fornavn;
-          klon.querySelector("img").src = "faces/" + person.billede;
+
           klon.querySelector(".email").textContent = person.email;
           klon.querySelector(".efternavn").textContent = person.Efternavn;
           data.appendChild(klon);
